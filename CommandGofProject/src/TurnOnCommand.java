@@ -3,11 +3,13 @@ public class TurnOnCommand implements Command {
 	
 	Television TV;
 	
-	public TurnOnCommand(Television TV) {
+	public TurnOnCommand(Television TV)
+	{
 		this.TV = TV;
 	}
 	
-	public void Execute() {
+	public void execute() {
+
 		TV.TurnOn();
 	}
 }
