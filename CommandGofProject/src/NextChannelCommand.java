@@ -1,9 +1,9 @@
 
-public class NextChannel implements Command {
+public class NextChannelCommand implements Command {
 
     Television TV;
 
-    public NextChannel(Television TV) {
+    public NextChannelCommand(Television TV) {
         this.TV = TV;
     }
 

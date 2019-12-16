@@ -1,26 +1,15 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.Time;
 
 public class Client {
     public static void main(String[] args) throws IOException {
-        CommandManager manager = new CommandManager();
+        Television TV = new Television();
 
-//        manager.setCommand(TurnOn);
-//        manager.pressButton();
-//
-//        manager.setCommand(TurnOff);
-//        manager.pressButton();
-        System.out.println("Avalable commands: \n" +
-                "1 - TurnOn \n" +
-                "2 - TurnOff \n" +
-                "3 - NextChannel \n");
+        CommandManager manager = new CommandManager(TV);
+        System.out.println(manager.getAvailableCommandsString());
         while (true) {
-
             System.out.println("Listening command number:");
-
-
             BufferedReader reader =
                     new BufferedReader(new InputStreamReader(System.in));  // kuulab, mida kasutaja konsooli kirjutab
             String userCommand = reader.readLine();  //loeb kasutaja vastuse muutujassse
