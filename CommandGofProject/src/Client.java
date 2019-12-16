@@ -6,28 +6,26 @@ import java.sql.Time;
 public class Client {
     public static void main(String[] args) throws IOException {
         CommandManager manager = new CommandManager();
-        Television TV = new Television();
-        Command TurnOn = new TurnOnCommand(TV);
-        Command TurnOff = new TurnOffCommand(TV);
 
-        manager.setCommand(TurnOn);
-        manager.pressButton();
-
-        manager.setCommand(TurnOff);
-        manager.pressButton();
+//        manager.setCommand(TurnOn);
+//        manager.pressButton();
+//
+//        manager.setCommand(TurnOff);
+//        manager.pressButton();
+        System.out.println("Avalable commands: \n" +
+                "1 - TurnOn \n" +
+                "2 - TurnOff \n" +
+                "3 - NextChannel \n");
         while (true) {
-            long tenSec = System.currentTimeMillis();
-            System.out.println("Avalable commands: \n" +
-                    "1 - TurnOn \n" +
-                    "2 - TurnOff \n");
+
             System.out.println("Listening command number:");
 
+
             BufferedReader reader =
-                    new BufferedReader(new InputStreamReader(System.in));
-            String userCommand = reader.readLine();
-            System.out.println(userCommand);
-            tenSec += 10000L;
-            manager.addScheduledCommand(new Time(tenSec), TurnOn);
+                    new BufferedReader(new InputStreamReader(System.in));  // kuulab, mida kasutaja konsooli kirjutab
+            String userCommand = reader.readLine();  //loeb kasutaja vastuse muutujassse
+            System.out.println(userCommand);  //prindib kasutaja vastuse
+            manager.setCommand(userCommand);
 
         }
     }

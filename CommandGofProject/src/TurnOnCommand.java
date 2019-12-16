@@ -12,4 +12,7 @@ public class TurnOnCommand implements Command {
 
 		TV.TurnOn();
 	}
+	public boolean getIsSchedulable() {
+		return isSchedulable;
+	}
 }
