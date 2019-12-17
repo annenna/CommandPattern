@@ -12,4 +12,10 @@ public class Television {
 		on = false;
 		System.out.println("TV is off!");
 	}
+
+	public void ChangeChannel() {
+
+		on = true;
+		System.out.println("Channel changed");
+	}
 }
